@@ -1,0 +1,15 @@
+name: 'Get BDS version'
+description: 'Get the right BDS version through lip installed LeviLamina'
+inputs:
+  dotlip_dir:
+    description: 'Where is the .lip dir'
+    required: true
+    default: './'
+outputs:
+  version:
+    description: 'The right BDS version'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.dotlip_dir }}
